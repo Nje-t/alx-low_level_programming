@@ -7,26 +7,21 @@
 
 int main(void)
 {
-	int counter;
-	long int a = 1;
-	long int b = a + 1;
-	long int c = a + b;
+	int count;
+	unsigned long fib1 = 0, fib2 = 1, sum;
 
-	printf("%ld, %ld, ", a, b);
-	while (counter < 50)
+	for (count = 0, count < 50; count++)
 	{
-		printf("%ld", c);
-		counter++;
-		a = b;
-		b = c;
-		c = a + b;
-	if (counter == 49)
-	{
-		printf(", ");
-	}
-	}
+		sum = fib1 + fib2;
+		printf("%lu", sum);
 
-	printf("\n");
+		fib1 = fib2;
+		fib2 = sum;
 
+		if (count == 49)
+			printf("\n");
+		else
+			printf(", ");
+	}
 	return (0);
 }
